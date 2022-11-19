@@ -195,11 +195,12 @@ class App extends React.Component {
             if (count === 4) {
                 console.log("WIN")
                 this.setState({ win_serie: win_serie += 1 });
-                setTimeout(() => {this.WinSerieAnimation()}, 5)
                 let win_text = ''
-                setTimeout(() => {win_text = `<b>Gagné ! Bien joué</b> <br>La combinaison à trouver était bien: ${combi_to_find_to_print}<br>Série de victoires actuelle : <b>${this.state.win_serie}</b>`}, 10)
+                setTimeout(() => {win_text = `<b>Gagné ! Bien joué</b> <br>La combinaison à trouver était bien: ${combi_to_find_to_print}<br>Série de victoires actuelle : <b>${this.state.win_serie}</b>`}, 150)
                 
-                setTimeout(() => {this.EndGameModal(win_text)}, 15)
+                setTimeout(() => {this.EndGameModal(win_text)}, 200)
+
+                setTimeout(() => {this.WinSerieAnimation()}, 200)
             }
 
 
@@ -238,7 +239,7 @@ class App extends React.Component {
                 if ((i === table.length - 1) && (!(table[i]).includes(null))) {
                     console.log("YOU LOOSE")
                     this.setState({ win_serie: 0 })
-                    setTimeout(() => {this.EndGameModal(loose_text)}, 10)
+                    setTimeout(() => {this.EndGameModal(loose_text)}, 150)
                 }
             }
             table = table.reverse()
