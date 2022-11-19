@@ -120,6 +120,7 @@ h6 {
   .modal-content {
 	background-color: #fefefe;
 	margin: auto;
+  margin-top: 7%;
 	padding: 20px;
 	border: 1px solid #888;
 	width: 34%;
@@ -160,6 +161,10 @@ h6 {
     .bouton {
       top: 37.5em;
   }
+
+  .modal-content {
+    margin-top: 30%;
+    }
 }
 
   @media screen and (min-width: 550px) and (max-width: 825px) {
