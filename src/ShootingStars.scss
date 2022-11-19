@@ -43,7 +43,7 @@
     left: 0;
     width: var(--star-tail-length);
     height: var(--star-tail-height);
-    color: skyblue;
+    color: rgb(227, 227, 227);
     background: linear-gradient(45deg, currentColor, transparent);
     border-radius: 50%;
     filter: drop-shadow(0 0 6px currentColor);

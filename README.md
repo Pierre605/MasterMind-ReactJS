@@ -1,3 +1,9 @@
+## React Javascript "MasteMind" Game (by Pierre L.)
+
+### Game deployed on react gh-pages. You can try it at https://pierre605.github.io/MasterMind-ReactJS/  
+<br />
+<br />
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -142,11 +142,11 @@ class App extends React.Component {
         let win_serie = this.state.win_serie
         let stars = document.getElementsByClassName('stars');
 
-        if (win_serie === 1) {
+        if ((win_serie >= 2) && (win_serie < 5)){
             stars[0].style.display = 'block';
         }
 
-        else if (win_serie === 5) {
+        else if (win_serie >= 5) {
             stars[0].style.display = 'block';
             for (let i=0; i < stars[0].childNodes.length; i++) {
                 stars[0].childNodes[i].style.color = 'gold'
@@ -274,7 +274,7 @@ class App extends React.Component {
     <div id='main'>
         <Stars />
         <h2>MASTER MIND</h2>
-
+        <div id='text'><i>"2 victoires d'affilée et c'est une pluie d'étoiles d'argent,<br/>5 victoires et l'or pleuvera sur vous 💫"</i></div>
         <div className='aside'>
             <div className='grid-p'>
                 {this.state.table.map((row, i) => {
@@ -304,7 +304,7 @@ class App extends React.Component {
             </div>
         </div>
 
-        <div>Color Set</div>
+        <h6>Color Set</h6>
         <div className='wrapper'>
             {colors.map((color, i) => {
                 return (
