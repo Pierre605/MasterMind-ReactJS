@@ -4,7 +4,8 @@ import Stars from './ShootingStars';
 import './ShootingStars.scss';
 
 
-const colors = ['🔵', '🔴', '🟢', '🟡', '🟣']
+const colors = ['🔵', '🔴', '🟢', '🟡', '🟣'];
+let app_gh_pages_URL = "https://pierre605.github.io/MasterMind-ReactJS/";
 
 
 class App extends React.Component {
