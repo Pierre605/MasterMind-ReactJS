@@ -72,7 +72,7 @@ class App extends React.Component {
         for (const i of random_list) {
             combi.push(colors[i])
         }
-        // console.log("combi:", combi)
+        console.log("combi:", combi)
         return combi
     }
 
@@ -235,24 +235,38 @@ class App extends React.Component {
                     break
                 }
             }
-            // Loose check
-            for (let i=0; i < table.length; i++) {
-                if ((i === table.length - 1) && (!(table[i]).includes(null))) {
-                    console.log("YOU LOOSE")
-                    this.setState({ win_serie: 0 })
-                    setTimeout(() => {this.EndGameModal(loose_text)}, 150)
-                }
-            }
+            
             table = table.reverse()
 
             // Fill check table
+            let arr1 = ['⚪', '❌']
+            let arr2 = ['⚫']
             combi_check = combi_check.reverse()
             for (let i=0; i < combi_check.length; i++) {
-                if (combi_check[i][0].includes(null)) {
-                    combi_check[i] = []
+                if ((combi_check[i][0].includes(null)) && (i !== combi_check.length - 1)) {
                     combi_check[i] = shaken
                     break
-                }
+                    }
+
+                if (i === combi_check.length - 1) {
+                    console.log("last row")
+                    let isFounded_1 = shaken[0].every( ai => arr2.includes(ai) );
+                    let isFounded_2 = shaken[1].every( ai => arr2.includes(ai) );
+                    console.log("isfounded 1:", isFounded_1);
+                    console.log("isfounded 2:", isFounded_2);
+                    if ((isFounded_1 === false) || (isFounded_2 === false)) {
+                        combi_check[i] = shaken
+                        console.log("YOU LOOSE")
+                        this.setState({ win_serie: 0 })
+                        setTimeout(() => {this.EndGameModal(loose_text)}, 150)
+                        break
+                    }
+                    else if ((isFounded_1 === true) && (isFounded_1 === true)) {
+                        console.log('all black, you win')
+                        combi_check[i] = shaken
+                        break
+                    }
+                }  
             }
             console.log("combi check:", combi_check)
             combi_check = combi_check.reverse()
