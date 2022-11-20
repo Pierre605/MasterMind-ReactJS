@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/MasterMind-ReactJS/static/css/main.f168c857.css",
+    "main.css": "/MasterMind-ReactJS/static/css/main.5562233e.css",
     "main.js": "/MasterMind-ReactJS/static/js/main.a154dc84.js",
     "static/js/787.fcdc89a3.chunk.js": "/MasterMind-ReactJS/static/js/787.fcdc89a3.chunk.js",
     "static/media/background_pic_2.png": "/MasterMind-ReactJS/static/media/background_pic_2.86154270c932b4f2c73c.png",
     "index.html": "/MasterMind-ReactJS/index.html",
-    "main.f168c857.css.map": "/MasterMind-ReactJS/static/css/main.f168c857.css.map",
+    "main.5562233e.css.map": "/MasterMind-ReactJS/static/css/main.5562233e.css.map",
     "main.a154dc84.js.map": "/MasterMind-ReactJS/static/js/main.a154dc84.js.map",
     "787.fcdc89a3.chunk.js.map": "/MasterMind-ReactJS/static/js/787.fcdc89a3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f168c857.css",
+    "static/css/main.5562233e.css",
     "static/js/main.a154dc84.js"
   ]
 }
