@@ -288,7 +288,7 @@ class App extends React.Component {
     <div id='main'>
         <Stars />
         <h2>MASTER MIND</h2>
-        <div id='text'><i>"2 victoires d'affilée et c'est une pluie d'étoiles d'argent,<br/>5 victoires et l'or pleuvera sur vous 💫"</i></div>
+        <div id='text'><i>"2 victoires d'affilée et c'est une pluie d'étoiles d'argent,<br/>5 victoires et vous serez couvert d'or 💫"</i></div>
         <div className='aside'>
             <div className='grid-p'>
                 {this.state.table.map((row, i) => {
