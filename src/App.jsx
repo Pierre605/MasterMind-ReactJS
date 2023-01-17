@@ -302,7 +302,7 @@ class App extends React.Component {
     <div id='main'>
         <Stars />
         <h2>MASTER MIND</h2>
-        <img alt='info icon' onClick={() => this.DisplayRulesModal()} id='info-icon' src='info.png'></img>
+        <img alt='info icon' onClick={() => this.DisplayRulesModal()} id='info-icon' src='https://pierre605.github.io/MasterMind-ReactJS/info.png'></img>
         <div id='text'>
             <i>"2 victoires d'affilée et c'est une pluie d'étoiles d'argent,<br/>5 victoires et vous serez couvert d'or 💫"</i>
         </div>
