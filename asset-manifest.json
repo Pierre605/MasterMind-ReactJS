@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/MasterMind-ReactJS/static/css/main.82e9ec7a.css",
-    "main.js": "/MasterMind-ReactJS/static/js/main.19a372b1.js",
+    "main.css": "/MasterMind-ReactJS/static/css/main.ef2957d7.css",
+    "main.js": "/MasterMind-ReactJS/static/js/main.4689b9de.js",
     "static/js/787.fcdc89a3.chunk.js": "/MasterMind-ReactJS/static/js/787.fcdc89a3.chunk.js",
     "static/media/background_pic_2.png": "/MasterMind-ReactJS/static/media/background_pic_2.86154270c932b4f2c73c.png",
     "index.html": "/MasterMind-ReactJS/index.html",
-    "main.82e9ec7a.css.map": "/MasterMind-ReactJS/static/css/main.82e9ec7a.css.map",
-    "main.19a372b1.js.map": "/MasterMind-ReactJS/static/js/main.19a372b1.js.map",
+    "main.ef2957d7.css.map": "/MasterMind-ReactJS/static/css/main.ef2957d7.css.map",
+    "main.4689b9de.js.map": "/MasterMind-ReactJS/static/js/main.4689b9de.js.map",
     "787.fcdc89a3.chunk.js.map": "/MasterMind-ReactJS/static/js/787.fcdc89a3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.82e9ec7a.css",
-    "static/js/main.19a372b1.js"
+    "static/css/main.ef2957d7.css",
+    "static/js/main.4689b9de.js"
   ]
 }
