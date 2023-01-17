@@ -107,11 +107,11 @@ class App extends React.Component {
 
     EndGameModal(text) {
             
-        let modal = document.getElementById("Modal");
+        let modal = document.getElementById("Modal-end");
         modal.style.display = "block";
 
-        let end_text = document.getElementsByTagName('p')
-        end_text[0].innerHTML = (text)
+        let end_text = document.getElementById('text-end')
+        end_text.innerHTML = text
 
         let span = document.getElementsByClassName("close")[0];
         
@@ -169,7 +169,7 @@ class App extends React.Component {
         let random_list = [];
         let n = 0;
         const combi_to_find_to_print = (combi_to_find).join(' ')
-        const loose_text = `<b>Perdu</b> <br><br>La combinaison à trouver était: ${combi_to_find_to_print}`
+        const loose_text = `<b>Perdu</b> <br><br>La combinaison à trouver était:<br/>${combi_to_find_to_print}`
 
         if (combi.length === 4) {
             
@@ -184,7 +184,6 @@ class App extends React.Component {
                     check.push('❌')
                 }
             }
-            // console.log("check:", check)
 
             // Win Check
             let count = 0;
@@ -197,7 +196,7 @@ class App extends React.Component {
                 console.log("WIN")
                 this.setState({ win_serie: win_serie += 1 });
                 let win_text = ''
-                setTimeout(() => {win_text = `<b>Gagné ! Bien joué</b> <br>La combinaison à trouver était bien: ${combi_to_find_to_print}<br>Série de victoires actuelle : <b>${this.state.win_serie}</b>`}, 150)
+                setTimeout(() => {win_text = `<b>Gagné ! Bien joué</b> <br>La combinaison à trouver était bien:<br/>${combi_to_find_to_print}<br>Série de victoires actuelle : <b>${this.state.win_serie}</b>`}, 150)
                 
                 setTimeout(() => {this.EndGameModal(win_text)}, 200)
 
@@ -251,8 +250,6 @@ class App extends React.Component {
                     console.log("last row")
                     let isFounded_1 = shaken[0].every( ai => arr2.includes(ai) );
                     let isFounded_2 = shaken[1].every( ai => arr2.includes(ai) );
-                    // console.log("isfounded 1:", isFounded_1);
-                    // console.log("isfounded 2:", isFounded_2);
                     if ((isFounded_1 === false) || (isFounded_2 === false)) {
                         combi_check[i] = shaken
                         console.log("YOU LOOSE")
@@ -278,6 +275,23 @@ class App extends React.Component {
         }
     }
 
+    DisplayRulesModal() {
+        console.log('hello')
+        let modal = document.getElementById("Modal-rules");
+        modal.style.display = "block";
+
+        let span = document.getElementsByClassName("close")[0]; 
+        span.onclick = (event) => {
+        modal.style.display = "none";
+        }
+
+        window.onclick = (event) => {
+        if (event.target === modal) {
+            modal.style.display = "none";
+            }
+        }
+    }
+
 
 
 
@@ -288,7 +302,16 @@ class App extends React.Component {
     <div id='main'>
         <Stars />
         <h2>MASTER MIND</h2>
-        <div id='text'><i>"2 victoires d'affilée et c'est une pluie d'étoiles d'argent,<br/>5 victoires et vous serez couvert d'or 💫"</i></div>
+        <img alt='info icon' onClick={() => this.DisplayRulesModal()} id='info-icon' src='info.png'></img>
+        <div id='text'>
+            <i>"2 victoires d'affilée et c'est une pluie d'étoiles d'argent,<br/>5 victoires et vous serez couvert d'or 💫"</i>
+        </div>
+        <div id="Modal-rules">
+            <div id="modal-rules-content">
+                <span class="close"></span>
+                <p id="text-rules">Règles du jeu 📜<br/><br/>Vous devez trouver parmi 5 couleurs possibles une combinaison de 4 couleurs dans le bon ordre. Une fois votre proposition de combinaison jouée, le jeu vous indique par une croix rouge qu'il vous manque une couleur, par un point blanc que vous avez la bonne couleur mais pas à la bonne place et par un point noir que vous avez la bonne couleur à la bonne place, sachant que l'ordre d'affichage de ces indices est aléatoire.</p>
+            </div>
+        </div>
         <div className='aside'>
             <div className='grid-p'>
                 {this.state.table.map((row, i) => {
@@ -297,10 +320,10 @@ class App extends React.Component {
                     )
                 })}
             </div>
-            <div id="Modal" className="modal">
-                <div className="modal-content">
+            <div id="Modal-end">
+                <div id="modal-end-content">
                     <span className="close"></span>
-                    <p></p>
+                    <p id="text-end"></p>
                 </div>
             </div>
             <div className='grid-c'>
@@ -318,8 +341,7 @@ class App extends React.Component {
             </div>
         </div>
 
-        <h6>Color Set</h6>
-        <div className='wrapper'>
+        <div className='wrapper-set'>
             {colors.map((color, i) => {
                 return (
                     <div key={i} className='color-set' id={color}>{color}</div>
@@ -328,7 +350,7 @@ class App extends React.Component {
         </div>
 
         <div>Votre combinaison</div>
-        <div className='wrapper'>
+        <div className='wrapper-combi'>
             {this.state.combi_proposal.map((color, i) => {
                 return (
                     <div key={i}>{color}</div>
